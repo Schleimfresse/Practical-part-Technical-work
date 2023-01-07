@@ -1,0 +1,31 @@
+{
+  "name": "technical-paper-dynamic",
+  "version": "1.0.0",
+  "description": "Web application for the practical part of my technical work",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "build": "tsc --module esnext",
+    "clear": "tsc --build --clean"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "js"
+  ],
+  "type": "module",
+  "author": "schleimfresse",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "@types/node": "^18.11.12",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "nedb": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14"
+  }
+}
