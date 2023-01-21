@@ -14,6 +14,41 @@
 		<title>Start | Practical Part</title>
 	</head>
 	<body>
-        <%- data.content %> 
-    </body>
+		<main>
+			<section>
+				<form id="form" method="post">
+					<input type="submit" value="Submit" />
+					<input type="text" id="text" name="text" />
+				</form>
+			</section>
+			<section id="content-wrapper"></section>
+		</main>
+	</body>
+	<script defer>
+		const data = <%- data.content -%>;
+			const box = document.getElementById("content-wrapper")
+			data.forEach(e => {
+				const div = document.createElement("div");
+				div.textContent = e.data;
+				box.append(div)
+			});
+		document.getElementById("form").addEventListener("submit", (e) => {
+			const data = { text: document.getElementById("text").value };
+			const options = {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			};
+			console.log(options);
+			fetch("/add", options)
+				.then((response) => {
+					console.log("Data sent successfully!");
+				})
+				.catch((err) => {
+					console.log(err);
+				});
+		});
+	</script>
 </html>

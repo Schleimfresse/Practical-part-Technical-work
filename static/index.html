@@ -14,6 +14,23 @@
 		<title>Start | Practical Part</title>
 	</head>
 	<body>
-        text
-    </body>
+		<main>
+			<section>
+				<form id="form" method="post">
+					<input type="submit" value="Submit" />
+					<input type="text" id="text" name="text" />
+				</form>
+			</section>
+			<section id="content-wrapper"></section>
+		</main>
+	</body>
+	<script defer>
+		const box = document.getElementById("content-wrapper");
+		document.getElementById("form").addEventListener("submit", (e) => {
+			e.preventDefault();
+			const div = document.createElement("div");
+			div.textContent = document.getElementById("text").value;
+			box.append(div);
+		});
+	</script>
 </html>
